@@ -23,7 +23,7 @@ public class LC1155 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new LC1155().numRollsToTarget(1, 6, 3));
+        System.out.println(new LC1155().numRollsToTarget(8, 30, 120));
     }
 
 
