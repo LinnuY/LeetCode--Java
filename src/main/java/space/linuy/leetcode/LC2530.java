@@ -11,8 +11,8 @@ package space.linuy.leetcode;
  */
 public class LC2530 {
 
-    public long maxKelements(int[] nums, int k) {
-        heapify(nums);
+    public long maxKElements(int[] nums, int k) {
+        stacking(nums);
         long total = 0;
         for (int i = 0; i < k; i++) {
             total += nums[0];
@@ -22,7 +22,7 @@ public class LC2530 {
         return total;
     }
 
-    public void heapify(int[] nums) {
+    public void stacking(int[] nums) {
         for (int i = nums.length / 2 - 1; i >= 0; i--) {
             sink(nums, i);
         }
@@ -52,6 +52,6 @@ public class LC2530 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new LC2530().maxKelements(new int[]{1, 10, 3, 3, 3}, 3));
+        System.out.println(new LC2530().maxKElements(new int[]{1, 10, 3, 3, 3}, 3));
     }
 }
