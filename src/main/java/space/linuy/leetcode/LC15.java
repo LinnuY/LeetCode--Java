@@ -10,33 +10,28 @@ public class LC15 {
             if (i != 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
+            int target = - nums[i];
+            int k = nums.length - 1;
             for (int j = i + 1; j < nums.length - 1; j++) {
                 if (j != i + 1 && nums[j] == nums[j - 1]) {
                     continue;
                 }
-                if (binarySearch(nums, j + 1, nums.length - 1, -nums[i] - nums[j])) {
+                while (j < k && nums[j] + nums[k] > target) {
+                    k--;
+                }
+                if (j >= k) {
+                    break;
+                }
+                if (nums[j] + nums[k] == target) {
                     List<Integer> temp = new ArrayList<>();
                     temp.add(nums[i]);
                     temp.add(nums[j]);
-                    temp.add(-nums[i]-nums[j]);
+                    temp.add(nums[k]);
                     result.add(temp);
                 }
             }
         }
         return result;
-    }
-
-    private Boolean binarySearch(int[] nums, int begin, int end, int value) {
-        if (begin > end) {
-            return false;
-        }
-        if (begin == end && nums[(begin + end) / 2] != value) {
-            return false;
-        }
-        if (nums[(begin + end) / 2] == value) {
-            return true;
-        }
-        return binarySearch(nums, begin, (begin + end) / 2, value) || binarySearch(nums, (begin + end) / 2 + 1, end, value);
     }
 
     public static void main(String[] args) {
