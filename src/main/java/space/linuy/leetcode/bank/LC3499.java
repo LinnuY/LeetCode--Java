@@ -17,12 +17,5 @@ import java.util.List;
  */
 public class LC3499 {
 
-    public int maxActiveSectionsAfterTrade(String s) {
-        List<Integer> nodeList = new ArrayList<>();
-        nodeList.add(0);
-        int i = 1;
-        for (char c : s.toCharArray()) {
-            if ()
-        }
-    }
+
 }

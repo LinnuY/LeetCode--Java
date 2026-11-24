@@ -20,10 +20,5 @@ package space.linuy.leetcode.bank;
  * 如果所有的断言都通过，你的解决方案将会 通过。
  */
 public class LC27 {
-    public int removeElement(int[] nums, int val) {
-        int j = 0;
-        for (int i = 0; i < nums.length; i++) {
 
-        }
-    }
 }
